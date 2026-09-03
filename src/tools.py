@@ -4,6 +4,7 @@ from langchain_community.utilities import WikipediaAPIWrapper, GoogleSerperAPIWr
 from langchain_community.tools import WikipediaQueryRun, GoogleSerperRun
 
 
+# 2. Tool declaration
 wiki_api_wrapper = WikipediaAPIWrapper(
     top_k_results=1,
     doc_content_chars_max=300,
@@ -28,3 +29,9 @@ def calculator(expression: str) -> str:
 
 
 tools = [wiki_tool, google_search_tool, calculator]
+
+
+# Bind the declared tools to the LLM.
+from src.llm import llm
+
+llm_with_tools = llm.bind_tools(tools)
