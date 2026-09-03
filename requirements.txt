@@ -1,0 +1,7 @@
+langgraph
+langsmith
+langchain
+langchain-groq
+langchain-community
+simpleeval
+wikipedia
