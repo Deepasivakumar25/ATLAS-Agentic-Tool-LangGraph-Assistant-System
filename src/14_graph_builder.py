@@ -13,10 +13,10 @@ tool_node = import_module("src.13_toolnode").tool_node
 graph_builder = StateGraph(State)
 
 # Add nodes
- graph_builder.add_node("chatbot", chatbot)
- graph_builder.add_node("tools", tool_node)
+graph_builder.add_node("chatbot", chatbot)
+graph_builder.add_node("tools", tool_node)
 
 # Add edges
- graph_builder.add_edge(START, "chatbot")
- graph_builder.add_conditional_edges("chatbot", tools_condition)
- graph_builder.add_edge("tools", "chatbot")
+graph_builder.add_edge(START, "chatbot")
+graph_builder.add_conditional_edges("chatbot", tools_condition)
+graph_builder.add_edge("tools", "chatbot")
