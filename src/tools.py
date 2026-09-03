@@ -29,9 +29,3 @@ def calculator(expression: str) -> str:
 
 
 tools = [wiki_tool, google_search_tool, calculator]
-
-
-# Bind the declared tools to the LLM.
-from src.llm import llm
-
-llm_with_tools = llm.bind_tools(tools)
