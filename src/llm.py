@@ -1,12 +1,10 @@
 from langchain_groq import ChatGroq
 
 from src.config import GROQ_API_KEY
-from src.tools import tools
 
 
+# 1. LLM declaration
 llm = ChatGroq(
     groq_api_key=GROQ_API_KEY,
     model_name="openai/gpt-oss-20b",
 )
-
-llm_with_tools = llm.bind_tools(tools)
